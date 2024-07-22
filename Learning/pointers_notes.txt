@@ -1,0 +1,31 @@
+The below two operators are exclusively used in connection with pointers:
+address of operator (&)
+indirection or dereference operator (*)
+In the below code:
+int x = 3;	 // Line 1
+int y = 5;	 // Line 2
+int *z, *k;	 // Line 3
+z = &x;		 // Line 4
+k = &y;		 // Line 5
+int sum = *z + *k;  // Line 6In Line 4, the address of operator (&) is used to return the address of the variable x and store it in the pointer variable z.
+
+In Line 6, the indirection operator (*) is used to return the values stored at the addresses referred by the pointer variables z and k.
+
+Below are a few invalid usages of & and * operators:
+⟹ &10					// & cannot be used with constants, as they do not have addresses
+⟹ &(a + b)				// an expression does not have any address
+⟹ register int r; &r;	// it is invalid to access address of register variables
+⟹ *1024				// asterisk cannot be used with constants
+⟹ int n, p; p = *n;	// Unlike &, asterisk (*) cannot be used on non-pointer variables
+
+
+===================================================
+CAll BY address
+
+While calling a function, if we pass the address of a variable as argument to a function, it is known as call by address.
+
+In such scenarios, we should declare the parameters in the called function as pointer variables.
+
+The addresses of actual arguments in the calling function are copied into the pointer variables of formal parameters of the called function.
+
+Using the addresses, the called function can access the actual arguments from the formal parameters. Meaning, the code inside the called function can directly access and modify the actual arguments in the calling function.
