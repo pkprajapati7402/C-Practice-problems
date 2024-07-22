@@ -1,0 +1,77 @@
+There are four storage class specifiers in C language, they are:
+auto
+extern
+static
+register
+The general form of a variable declaration that uses a storage class is:
+storage_class_specifier data_type variable_name;
+At most one storage_class_specifier may be given in a declaration. If no storage_class_specifier is specified then following rules are used:
+Variables declared inside a function are taken to be auto.
+Variables declared outside a function are taken to be global.
+
+#Auto (auto or by default memory allocation).
+
+
+Automatic variables are declared inside a block/function in which they are to be utilized.
+
+These variables are created when a function is called and destroyed automatically when a function is exited.
+
+Automatic variables are private to the function where they are declared. Because of this property, automatic variables are also referred to as local or internal variables.
+
+A variable declared inside a function without any storage class specification, is by default an automatic variable.
+
+Auto variables can be only accessed within the block/function they have been declared and not outside them.
+
+We seldom use the auto keyword in declarations because all block-scoped variables which are not explicitly declared with other storage classes are implicitly auto.
+
+The format for specifying the automatic variables are
+auto data_type variable_1, variable_2,..., variable_n;
+Some of the important points regarding auto variables are:
+	Storage:		CPU memory
+	Initial value:	undefined (can be any value)
+	Keyword:		auto
+	Scope:			local to the block in which it is defined
+	Lifetime:		till control remains within the block in which it is defined
+
+=============================================================
+#### Extern memory allocation
+
+A normal global variable can be made extern when it is being used much before its declaration.
+
+The format for specifying the external variables is
+extern data_type variable_1, variable_2,..., variable_n;
+Some of the important points regarding extern variables are:
+    Storage:		Memory
+    Initial value:	zero (0)
+    Keyword:		extern
+    Scope:			entire program
+    Lifetime:		throughout the program execution
+
+
+
+=============================================================
+#Static memory allocation
+
+When a variable is specified as static its value is persisted until the end of program.
+
+A variable can be declared as a static variable by using the keyword static.
+
+Auto variables are created each time they are initialized in a block and are destroyed when they go out of scope.
+
+However, static variables are initialized only once and they remain in existence till the end of program.
+
+A static variable can either be local (to a function) or global.
+
+The format for specifying static variables is
+static data_type variable_1, variable_2,..., variable_n;
+The static variables which are declared inside a function are stored in the statically allocated memory and remains alive through out the execution of the program, but remember that their scope remains local to the function.
+
+The main difference between auto and static is that the static variables do not disappear when the function is no longer active (in scope) and their values persist across multiple calls of the same function.
+
+Some of the important points regarding static variables are:
+    Storage:		Memory
+    Initial value:	zero (0)
+    Keyword:		static
+    Scope:			local to the block in which it is defined
+    Lifetime:		throughout the program execution
+
